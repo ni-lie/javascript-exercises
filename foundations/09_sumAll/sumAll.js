@@ -1,6 +1,17 @@
-const sumAll = function() {
-
+const sumAll = function(start, end) {
+    if (typeof start !== 'number' || typeof end !== 'number' || !Number.isInteger(start) || !Number.isInteger(end) || start < 0 || end < 0) return 'ERROR';
+    let arrayOfIntegers = []; 
+    if (start > end) {
+        let temp = start;
+        start = end;
+        end = temp;
+    }
+    for (let i=start; i<=end; i++) {
+        arrayOfIntegers.push(i);
+    } 
+    return sum = arrayOfIntegers.reduce((total, item) => total + item, 0)
 };
+
 
 // Do not edit below this line
 module.exports = sumAll;
